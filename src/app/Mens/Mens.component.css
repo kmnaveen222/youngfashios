@@ -1,0 +1,168 @@
+
+.container{
+  position: relative;
+  top:0px;
+  margin: 50px;
+  display: grid;
+  grid-template-columns: repeat( auto-fit,minmax(250px,1fr));
+  grid-gap: 40px;
+  padding: 10px;
+
+}
+.container .card{
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0.122);
+  border-radius: 5px;
+
+  background-color: white;
+width: 100%;
+}
+.container .card .imgbx{
+  position: relative;
+  width: 200px;
+  height: 250px;
+  padding: 10px;
+  margin-left: 30px;
+overflow: hidden;
+}
+.container .card .imgbx img{
+position: absolute;
+width:100%;
+transition: 0.5s;
+}
+.container .card .product-details{
+padding-left: 10px;
+padding-right: 10px;
+}
+.container .card .product-details p{
+  color: rgb(81, 81, 81);
+  font-size: 13px;
+}
+/*------wishlist,cart,view START--------*/
+.action{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+.action li{
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color:rgba(128, 128, 128, 0.585);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+  cursor: pointer;
+  transform: translateX(60px);
+}
+.action li:nth-child(2){
+  transition-delay: 0.15s;
+}
+.action li:nth-child(3){
+  transition-delay: 0.3s;
+}
+.container .card:hover .action li{
+  transition: 1s;
+  transform: translateX(0px);
+}
+.action li:hover{
+background-color: red;
+color: white;
+}
+.action li span{
+  position: absolute;
+  right: 40px;
+  top:0px;
+  text-align: right;
+  width: 120px;
+  padding: 4px 6px;
+  background-color: rgba(128, 128, 128, 0.4);
+  color: white;
+  font-size: 15px;
+  border-radius: 4px;
+  opacity: 0;
+}
+.action li:hover span{
+opacity: 1;
+}
+/*-------whishlist,cart,view END----------*/
+.container .card:hover .imgbx img{
+transform: scale(1.4);
+}
+.container .card .product-details{
+  border-top: 2px solid rgba(0, 0, 0, 0.122);
+  margin-bottom: 5px;
+  text-align: center;
+}
+.container .card .product-details  h3{
+
+  font-family:   Arial, sans-serif;
+  font-size: 15;
+  margin: 7px 0;
+}
+.container .card .product-details h5{
+  margin: 7px 0;
+}
+.container .card .product-details .price{
+  display: flex;
+  justify-content: space-between;
+}
+.container .card .product-details .price h4{
+  margin: 0;
+}
+.container .card .product-details .price h4 s{
+  color: grey;
+  font-size: 13px;
+margin: 7px 0;
+}
+.container .card .product-details .price h4 .offer-percent{
+  margin-left: 0px;
+  font-size: 14px;
+  color: green;
+}
+.container .card .product-details .price .rating .fa{
+  color:red;
+  font-size: 15px;
+}
+.container .card .product-details .price .rating .fa.gray{
+  color:gray;
+}
+
+.butn a{
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 4px;
+
+
+}
+.butn a button{
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.butn .cart-btn{
+  background-color: rgba(242, 180, 65, 0.902);
+}
+.butn .cart-btn:hover{
+  transition: all 0.2s ease;
+  background-color: rgb(238, 163, 25);
+
+
+}
+
+.butn .buynow-btn{
+  background-color: rgb(208, 208, 208);
+}
+.butn .buynow-btn:hover{
+  background-color: rgb(169, 168, 168);
+
+  transition: all 0.2s ease;
+}
+/* ----------------------------------product card END----------------------------------------------*/

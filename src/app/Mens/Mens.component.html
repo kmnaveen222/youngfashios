@@ -1,0 +1,56 @@
+<!-- <div class="banner1">
+  <a routerLink="">  <div><img width="100%" src="assets/mens/Shop-By-Category.png"></div>
+   </a>
+  </div> -->
+
+  <!-- <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of pro">
+      <div class="card">
+        <img src="{{item.thumbnail}}" alt="">
+        <h5>{{item.title}}</h5>
+        <p></p>
+        <p></p>
+        <button class="btn btn-primary">Add to cart</button>
+      </div>
+    </ng-container>
+    </div>
+  </div> -->
+  <div class="container">
+    <ng-container *ngFor="let item of pro">
+    <div class="card">
+        <div class="imgbx">
+            <img src="{{item.thumbnail}}" >
+            <ul class="action">
+              <li><i class="fa fa-heart" ></i><span>Add to Wishlist</span></li>
+              <li><i class="fa fa-cart-plus"></i><span>Add to Cart</span></li>
+              <li><i class="fa fa-eye" ></i><span>View Details</span></li>
+
+            </ul>
+        </div>
+        <div class="product-details">
+           <h3>{{item.title}}</h3>
+           <h5>{{item.category}}</h5>
+           <p>{{item.description}}</p>
+          <div class="price">
+            <h4>{{item.price|currency:'INR'}} <s> ₹5999 </s><span class="offer-percent">  {{item.discountPercentage}}%</span></h4>
+              <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star gray"></i>
+              </div>
+          </div>
+          <h5>FREE Delivery</h5>
+        </div>
+        <div class="butn">
+          <a routerLink=""><button class="cart-btn">Add to Cart</button></a>
+          <a routerLink=""><button class="buynow-btn">Buy Now</button></a>
+        </div>
+      </div>
+
+    </ng-container>
+
+  </div>

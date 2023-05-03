@@ -1,0 +1,172 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+
+  "home-categories": [
+    {
+      "img": "assets/categories/Dresses.png",
+      "img1": "assets/categories/Kurtas.png",
+      "img2": "assets/bestofbrands/BestOfBrands-CKJeans.png"
+
+    },
+    {
+      "img": "assets/categories/Shirts.png",
+      "img1": "assets/categories/Teens-Wear.png",
+      "img2": "assets/bestofbrands/BestOfBrands-H_M.png"
+    },
+    {
+      "img": "assets/categories/Sarees.png",
+      "img1": "assets/categories/Tops.png",
+      "img2": "assets/bestofbrands/BestOfBrands-Levis.png"
+    },
+    {
+      "img": "assets/categories/Kurta-Sets.png",
+      "img1": "assets/categories/Track-Pants.png",
+      "img2": "assets/bestofbrands/BestOfBrands-LP.png"
+    },
+    {
+      "img": "assets/categories/T-Shirts.png",
+      "img1": "assets/categories/Trousers.png",
+      "img2": "assets/bestofbrands/BestOfBrands-Max.png"
+    },
+    {
+      "img": "assets/categories/Jeans.png",
+      "img1": "assets/categories/Trousers_W.png",
+      "img2": "assets/bestofbrands/BestOfBrands-Nike.png"
+    },
+    {
+      "img2": "assets/bestofbrands/BestOfBrands-W.png"
+    }
+  ],
+
+  "mens-product":[
+    {
+      "id": 1,
+      "title": "Dennis Lingo",
+      "description": "Dennis Lingo Men's Solid Slim Fit Cotton Casual Shirt with Spread Collar & Full Sleeves",
+      "price": 999,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Dennis Lingo",
+      "category": "shirt",
+      "thumbnail": "assets/mens/Rust/51wmvnfbCXL._UL1500_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Allen Solly ",
+      "description": "Allen Solly Men's Slim Fit Shirt",
+      "price": 1099,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Allen Solly ",
+      "category": "shirt",
+      "thumbnail": "assets/mens/Olive/51T70SlCdbL._UL1500_.jpg"
+
+    },
+    {
+      "id": 3,
+      "title": "Dennis Lingo",
+      "description": "Dennis Lingo Men's Solid Slim Fit Cotton Casual Shirt with Spread Collar & Full Sleeves",
+      "price": 819,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Dennis Lingo",
+      "category": "shirt",
+      "thumbnail": "assets/mens/Dusty Peach/61H93ddhuIL._UL1440_.jpg"
+
+    },
+    {
+      "id": 4,
+      "title": "Dennis Lingo",
+      "description": "Dennis Lingo Men's Solid Slim Fit Cotton Casual Shirt with Spread Collar & Full Sleeves",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Dennis Lingo",
+      "category": "shirt",
+      "thumbnail": "assets/mens/Dennis-lingo-brown/61+DevEzLrL._UL1440_.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Diverse",
+      "description": "Diverse Men's Regular Fit Formal Shirt",
+      "price": 559,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Diverse",
+      "category": "shirt",
+      "thumbnail": "assets/mens/navy/81Fjs8HwQVL._UL1500_.jpg"
+    }
+  ],
+
+
+  "users": [
+    {
+      "name": "NAVEEN K M",
+      "emailid": "2k19eee024@kiot.ac.in",
+      "password": "12345678",
+      "cpassword": "12345678",
+      "id": 1
+    },
+    {
+      "name": "NAVEEN K M",
+      "emailid": "2k19eee030@kiot.ac.in",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "name": "NAVEEN K M",
+      "emailid": "2k19eee030@kiot.ac.in",
+      "password": "@Naveen222",
+      "id": 3
+    },
+    {
+      "username": "naveen.coe",
+      "emailid": "2k19eee030@kiot.ac.in",
+      "password": "this.ResisterForm.value",
+      "cpassword": "this.ResisterForm.value",
+      "id": 4
+    },
+    {
+      "username": "au611219105024",
+      "emailid": "2k19eee024@kiot.ac.in",
+      "password": "fdsssegg@N12",
+      "cpassword": "hhhyyytrr",
+      "id": 5
+    },
+    {
+      "username": "BHARATH",
+      "emailid": "2k19eee030@kiot.ac.in",
+      "password": "gdtgg@Na",
+      "cpassword": "gdtgg@Na",
+      "id": 6
+    },
+    {
+      "username": "au611219105024",
+      "emailid": "2k19eee030@kiot.ac.in",
+      "password": "@Naveen222",
+      "cpassword": "@Naveen222",
+      "id": 7
+    }
+  ]
+}

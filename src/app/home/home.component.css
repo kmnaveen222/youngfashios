@@ -1,0 +1,60 @@
+a{
+  text-decoration: none;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+
+}
+.container .banner a img{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.cat-head-bgcolor{
+  background-color:lightpink;
+}
+.category-header{
+  padding-bottom: 20px;
+  margin: 0px;
+  box-shadow: 0px 2px 20px rgb(170, 170, 170);
+}
+
+.category-header h4 {
+  font-family: Gill Sans MT;
+  font-size: 22px;
+  /* font-size: clamp(1rem, 1.5vw, 2rem); */
+  font-weight: 600;
+  padding: 20px;
+  letter-spacing: 5px;
+  color:#df4881;
+
+}
+
+.categories{
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  padding: 0 20px 0 20px;
+
+}
+.categories .banner1 .cat-details {
+  display: flex;
+  justify-content: center;
+
+}
+.categories .banner1:hover{
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+.categories .banner1 .cat-details p{
+  font-size: 25px;
+  font-family: 'Gill Sans MT';
+  font-weight: 600;
+  color: black;
+}
+.categories img{
+  width: 100%;
+}
