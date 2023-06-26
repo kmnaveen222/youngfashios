@@ -1,6 +1,8 @@
 a{
   text-decoration: none;
 }
+
+/* --------top banner-------- */
 .container{
   display: flex;
   justify-content: center;
@@ -12,6 +14,12 @@ a{
   height: auto;
   display: flex;
 }
+/* --------top banner end-------- */
+
+
+
+
+
 .cat-head-bgcolor{
   background-color:lightpink;
 }

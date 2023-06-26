@@ -1,4 +1,55 @@
 
+
+/* --------top banner-------- */
+.ban-container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  box-shadow: 0px 2px 20px rgb(170, 170, 170);
+
+}
+
+.ban-container .banner a img{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.ban-container .time-box{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+    top: 54%;
+    left: 45%;
+    letter-spacing: 2px;
+    background: -webkit-linear-gradient(45deg,#dc3d7a, #7a078a);
+    background-clip:text;
+  -webkit-text-fill-color: transparent;
+    font-size: 26px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+    animation: zoom-in-zoom-out/*animation-name*/ 3s/*animation-duration*/ ease/*animation-timing-function*/ infinite/*animation-iteration-count*/;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --------top banner end-------- */
+
+
+
+
+
+
 .container{
   position: relative;
   top:0px;
@@ -88,6 +139,9 @@ color: white;
 opacity: 1;
 }
 /*-------whishlist,cart,view END----------*/
+
+
+/* -------------product price rating start-------------- */
 .container .card:hover .imgbx img{
 transform: scale(1.4);
 }
@@ -114,12 +168,13 @@ transform: scale(1.4);
 }
 .container .card .product-details .price h4 s{
   color: grey;
-  font-size: 13px;
-margin: 7px 0;
+  font-size: 12px;
+margin: 7px 0px;
+margin-left: 5px;
 }
 .container .card .product-details .price h4 .offer-percent{
   margin-left: 0px;
-  font-size: 14px;
+  font-size: 11px;
   color: green;
 }
 .container .card .product-details .price .rating .fa{
@@ -129,6 +184,11 @@ margin: 7px 0;
 .container .card .product-details .price .rating .fa.gray{
   color:gray;
 }
+/* -------------product price rating end-------------- */
+
+
+
+/* ---------cart and buynow button start----------- */
 
 .butn a{
   display: flex;
@@ -165,4 +225,7 @@ margin: 7px 0;
 
   transition: all 0.2s ease;
 }
+
+/* ---------cart and buynow button end----------- */
+
 /* ----------------------------------product card END----------------------------------------------*/

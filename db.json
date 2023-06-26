@@ -16,13 +16,16 @@
   "profile": {
     "name": "typicode"
   },
-
+  "offer-banners": [
+    {
+      "banimg": "assets/banner/Summer.png"
+    }
+  ],
   "home-categories": [
     {
       "img": "assets/categories/Dresses.png",
       "img1": "assets/categories/Kurtas.png",
       "img2": "assets/bestofbrands/BestOfBrands-CKJeans.png"
-
     },
     {
       "img": "assets/categories/Shirts.png",
@@ -54,12 +57,17 @@
     }
   ],
 
-  "mens-product":[
+
+
+
+  "mens-product": [
     {
       "id": 1,
       "title": "Dennis Lingo",
       "description": "Dennis Lingo Men's Solid Slim Fit Cotton Casual Shirt with Spread Collar & Full Sleeves",
+      "originalprice": 4789,
       "price": 999,
+      "offerprice": 799,
       "discountPercentage": 17.94,
       "rating": 4.44,
       "stock": 34,
@@ -71,34 +79,38 @@
       "id": 2,
       "title": "Allen Solly ",
       "description": "Allen Solly Men's Slim Fit Shirt",
+      "originalprice": 5569,
       "price": 1099,
+      "offerprice": 809,
       "discountPercentage": 17.94,
       "rating": 4.44,
       "stock": 34,
       "brand": "Allen Solly ",
       "category": "shirt",
       "thumbnail": "assets/mens/Olive/51T70SlCdbL._UL1500_.jpg"
-
     },
     {
       "id": 3,
       "title": "Dennis Lingo",
       "description": "Dennis Lingo Men's Solid Slim Fit Cotton Casual Shirt with Spread Collar & Full Sleeves",
+      "originalprice": 6999,
       "price": 819,
+      "offerprice": 759,
       "discountPercentage": 17.94,
       "rating": 4.44,
       "stock": 34,
       "brand": "Dennis Lingo",
       "category": "shirt",
       "thumbnail": "assets/mens/Dusty Peach/61H93ddhuIL._UL1440_.jpg"
-
     },
     {
       "id": 4,
       "title": "Dennis Lingo",
       "description": "Dennis Lingo Men's Solid Slim Fit Cotton Casual Shirt with Spread Collar & Full Sleeves",
+      "originalprice": 7999,
       "price": 899,
-      "discountPercentage": 17.94,
+      "offerprice": 799,
+      "discountPercentage": 7.94,
       "rating": 4.44,
       "stock": 34,
       "brand": "Dennis Lingo",
@@ -109,7 +121,9 @@
       "id": 5,
       "title": "Diverse",
       "description": "Diverse Men's Regular Fit Formal Shirt",
+      "originalprice": 4999,
       "price": 559,
+      "offerprice": 449,
       "discountPercentage": 17.94,
       "rating": 4.44,
       "stock": 34,
@@ -120,6 +134,10 @@
   ],
 
 
+
+
+
+  
   "users": [
     {
       "name": "NAVEEN K M",
@@ -167,6 +185,13 @@
       "password": "@Naveen222",
       "cpassword": "@Naveen222",
       "id": 7
+    },
+    {
+      "username": "NAVEEN",
+      "emailid": "2k19eee024@kiot.ac.in",
+      "password": "@Naveen222",
+      "cpassword": "@Naveen222",
+      "id": 8
     }
   ]
 }

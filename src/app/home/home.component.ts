@@ -8,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 pro:any;
+
   constructor(private http:HttpClient) {}
 
   ngOnInit() {
-    this.http.get<any>("http://localhost:3000/home-categories").subscribe(res=>{
+    this.http.get("http://localhost:3000/home-categories").subscribe(res=>{
   this.pro = res;
 
     })
+
 
 
 }

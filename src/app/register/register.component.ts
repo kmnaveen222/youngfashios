@@ -34,6 +34,9 @@ export class RegisterComponent implements OnInit {
         })
       }
   }
+
+
+  
   // submitform(ResisterForm:any){
 
   //   var body={
