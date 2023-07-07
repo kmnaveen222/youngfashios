@@ -7,6 +7,15 @@ import { MensComponent } from './Mens/Mens.component';
 import { RegisterComponent } from './register/register.component';
 import { WomensComponent } from './Womens/Womens.component';
 import { CartComponent } from './cart/cart.component';
+import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { HomeadminComponent } from './adminside/homeadmin/homeadmin.component';
+import { MensadminComponent } from './adminside/mensadmin/mensadmin.component';
+import { WomensadminComponent } from './adminside/womensadmin/womensadmin.component';
+import { KidsadminComponent } from './adminside/kidsadmin/kidsadmin.component';
+import { UserdetailsComponent } from './adminside/userdetails/userdetails.component';
+import { OderdetailsComponent } from './adminside/oderdetails/oderdetails.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 const routes: Routes = [
   {
@@ -37,6 +46,40 @@ const routes: Routes = [
       path:"register",
       component:RegisterComponent
   },
+  {
+    path:"userprofile",
+    component:UserprofileComponent
+},
+  {
+    path:"privacypolicy",
+    component:PrivacypolicyComponent
+},
+
+{
+  path:"homeadmin",
+  component:HomeadminComponent
+},
+{
+  path:"mensadmin",
+  component:MensadminComponent
+},{
+  path:"womensadmin",
+  component:WomensadminComponent
+},{
+  path:"kidsadmin",
+  component:KidsadminComponent
+},{
+  path:"userdetails",
+  component:UserdetailsComponent
+},{
+  path:"orders",
+  component:OderdetailsComponent
+},
+
+{
+  path:"productdetail/:id",
+  component:ProductdetailComponent
+},
     {
         path:"**",
         component:HomeComponent

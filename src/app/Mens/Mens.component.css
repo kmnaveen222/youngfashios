@@ -173,7 +173,7 @@ margin: 7px 0px;
 margin-left: 5px;
 }
 .container .card .product-details .price h4 .offer-percent{
-  margin-left: 0px;
+  margin-left: 3px;
   font-size: 11px;
   color: green;
 }

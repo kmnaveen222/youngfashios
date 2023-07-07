@@ -4,10 +4,17 @@
 
   <!-- {{pro|json}} -->
   <div class="header">
-    <a routerLink="home">
+    <a routerLink="home" *ngIf="adminlogin==true" >
   <div class="logo">
   <img src="assets/logo/young_fashios-removebg-preview.png">
 </div></a>
+
+<a routerLink="homeadmin" *ngIf="adminlogin===false" >
+  <div class="logo">
+  <img src="assets/logo/young_fashios-removebg-preview.png">
+</div></a>
+
+<ng-container *ngIf="adminlogin==true" >
 <nav class="items">
   <ul>
     <li><a routerLink="home">HOME</a></li>
@@ -20,23 +27,52 @@
   <span><input type="search" placeholder="search"></span>
 
 </div>
-<i class="fa fa-search search"></i>
+<i class="fa fa-search search"></i></ng-container>
 
-<div class="login">
-  <a routerLink="login">LOGIN</a>
-  <a routerLink="">
-    <div class="shopping-cart">
-    <div class="cart-icon" >
-      <i class="fa fa-heart"></i>
+
+
+<nav class="items" *ngIf="adminlogin==false">
+  <ul>
+    <li><a routerLink="homeadmin">HOME</a></li>
+    <li><a routerLink="mensadmin">MENS</a></li>
+    <li><a routerLink="womensadmin">WOMENS</a></li>
+    <li><a routerLink="kidsadmin">KIDS</a></li>
+    <li><a routerLink="userdetails">USER DETAILS</a></li>
+    <li><a routerLink="orders">ORDERS</a></li>
+
+  </ul>
+</nav>
+<!-- <div class="sub-menu-wrap">
+  <div class="sub-menu">
+    <div class="user-info"></div>
   </div>
-  <div class="cart-name">WISHLIST</div></div></a>
-  <a routerLink="cart">
-    <div class="shopping-cart">
-    <div class="cart-icon" >
-      <i class="fa fa-cart-arrow-down"></i>
-  </div>
+</div> -->
+
+
+
+
+<div class="login" >
+
+  <button class="account" mat-button [matMenuTriggerFor]="menu"><i class="fa fa-user"></i>ACCOUNT<i class="fa fa-caret-down"></i></button>
+<mat-menu #menu="matMenu" class="sub-profile">
+  <div class="sub">
+    <div class="user-name" *ngIf="loggedemailid==null">Hello User!</div>
+    <div class="user-name" *ngIf="loggedemailid!==null">Hello {{loggedname}}!</div>
+  <div class="user-info"><a routerLink="userprofile">My Profile</a></div>
+  <div class="user-info"><a routerLink="">My Orders</a></div>
+
+  <div *ngIf="loggedemailid==null" style="cursor:pointer;" class="user-info"><a routerLink="login">Login</a></div>
+  <div *ngIf="loggedemailid!==null" style="cursor:pointer;" class="user-info"><a (click)="logout()">Logout</a></div>
+</div>
+</mat-menu>
+
+<ng-container *ngIf="adminlogin==true">
+
+  <a routerLink=""><div class="shopping-cart"> <div class="cart-icon" ><i class="fa fa-heart"></i></div><div class="cart-name">WISHLIST</div></div></a>
+  <a routerLink="cart"><div class="shopping-cart"><div class="cart-icon" ><i class="fa fa-cart-arrow-down"></i>
+</div>
   <div class="cart-name">CART</div></div></a>
-
+</ng-container>
 </div>
 
 
@@ -50,19 +86,18 @@
 </div>
 
 
+
 <router-outlet></router-outlet>
 
-
-
-<footer class="footer">
+<footer class="footer" *ngIf="adminlogin==true">
   <div class="footer-container">
     <div class="footer-row">
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
           <li><a routerLink="">about us</a></li>
-          <li><a routerLink="">our services</a></li>
-          <li><a routerLink="">privacy policy</a></li>
+          <li><a routerLink="privacypolicy">privacy policy</a></li>
+          <li><a routerLink="">Security</a></li>
           <li><a routerLink="">feedback</a></li>
         </ul>
       </div>
@@ -98,6 +133,16 @@
           <a routerLink=""><i class="fa fa-linkedin"></i></a>
         </div>
       </div>
+
+
     </div>
   </div>
+
+  <!-- <div class="copyrights">
+    <div class="copyr">
+      <i class="fa fa-copyright" aria-hidden="true" style="font-size: 20px; "></i> <p > www.Youngfashios.com. All rights reserved.</p>
+    </div>
+  </div> -->
+
   </footer>
+

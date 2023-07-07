@@ -1,5 +1,6 @@
 a{
   text-decoration: none;
+  cursor: pointer;
 }
 .header{
 display: flex;
@@ -26,6 +27,7 @@ justify-content: space-around;
   padding-bottom: 15px;
   color: black;
   font-family: Gill Sans MT;
+
 }
 .header .items ul li a:hover, .header .login a:hover{
 
@@ -48,13 +50,14 @@ justify-content: space-around;
 }
 .header .search{
   position: absolute;
-  right: 31%;
+  right: 40%;
   cursor: pointer;
   top: 22px;
   font-size: 16px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 .header .login {
   display: flex;
   flex-wrap: wrap;
@@ -62,16 +65,62 @@ justify-content: space-around;
   padding-top: 16px;
 }
 .header .login a{
-  padding-bottom: 0px;
+  padding-bottom:10px;
 }
 .header .login .shopping-cart{
 display: flex;
+
 gap: 3px;
 }
 .header .login .cart-icon{
   font-size: 19px;
   position: relative;
   top: -1px;
+  }
+  .login .account{
+    border: none;
+    color: black;
+    font-size: 16px;
+display: flex;
+text-align: start;
+    padding-bottom: 14px;
+  font-family: Gill Sans MT;
+    background-color: #fff;
+  }
+  .login .account .fa-caret-down{
+    margin-left: 5px;
+    font-size: 20px;
+  }
+  .login .account .fa-user{
+    margin-right: 7px;
+    font-size: 18px;
+  }
+  .login .account:hover{
+    color: rgb(255, 22, 197);
+  border-bottom: 3px solid rgb(255, 22, 197);
+  }
+
+  .user-info a:hover{
+    color: rgb(255, 22, 197);
+  border-bottom: 3px solid rgb(255, 22, 197);
+
+  }
+  .user-name{
+    font-family: Gill Sans MT;
+    display: block;
+    text-align: start;
+    padding: 10px;
+    border-bottom: 3px solid gray;
+    color: black;
+  }
+  .user-info a{
+    font-family: Gill Sans MT;
+    display: block;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px;
+    color: black;
   }
 
   /* -------footer-------- */
@@ -140,4 +189,10 @@ transition: all 0.5s ease;
 .footer .footer-container .footer-row .footer-col .social-col a:hover{
 color: #24262d;
 background-color: #fff;
+}
+.copyr p{
+  color: black;
+}
+.dgh{
+  color: black;
 }

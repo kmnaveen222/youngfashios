@@ -54,8 +54,7 @@
         <div class="error-container">
           <div *ngIf="ResisterForm.controls['cpassword'].invalid && (ResisterForm.controls['cpassword'].touched || ResisterForm.controls['cpassword'].dirty)" class="error">
             <div *ngIf="ResisterForm.controls['cpassword'].errors?.['required']" class="error">Confirm password is required </div>
-            <div *ngIf="ResisterForm.controls['cpassword'].errors?.['minlength']" class="error"> Enter a Confirm password atleast 8 to 15 characters </div>
-            <div *ngIf="ResisterForm.controls['cpassword'].errors?.['pattern']" class="error">password and confirm password does not match</div>
+            <div *ngIf="ResisterForm.controls['cpassword'].errors?.['Confirmedvalidators']" class="error"> Your password and confirrm password don't match </div>
           </div>
         </div>
 

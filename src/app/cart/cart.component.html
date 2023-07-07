@@ -1,56 +1,95 @@
 
-<ng-container *ngIf="true">
+<ng-container *ngIf="prolen===false">
+
   <div class="card-table">
     <div class="cart-product">
       <div class="table table-responsive">
-        <table>
+        <div class="card">
+          <h5 class="card-title">My Cart</h5>
+        </div>
+        <table [cellSpacing]="0" style="width:100%">
           <thead>
             <tr>
-              <th>Sr.No</th>
-              <th>Product Name</th>
-              <th>Product Image</th>
-              <th class="des">Description</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-              <th>Action</th>
+              <!-- <th style="width: 3%;"><input type="checkbox" (click)="onselectall()" ></th> -->
+              <th style="width:5%; padding-left: 20px;">Sr.No</th>
+              <th style="width:10%">Product Image</th>
+              <th style="width:10%">Product Name</th>
+              <!-- <th style="width:15%">Description</th> -->
+              <th style="width:6%">Price</th>
+              <th style="width:6%">Quantity</th>
+              <th style="width:6%">Total</th>
+              <th style="width:5%">Action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>ffnghkymk</td>
-              <td>nyukyyuu</td>
-              <td>fynkultui</td>
-              <td>uiltulu</td>
-              <td>gilitul</td>
-              <td>ghty</td>
+          <tbody >
+            <tr *ngFor="let item of product; let i = index" >
+              <!-- <td style="width: 3%;"><input type="checkbox" (click)="ondeselectall()"  ></td> -->
+              <td style="padding-left: 20px;">{{i+1}}</td>
+              <td> <img src="{{item.thumbnail}}" class="proimage"></td>
+              <td style="color: black; font-size: 15px; font-weight: 500;">{{item.title}}</td>
+              <!-- <td style="color: black; font-size: 12px; font-weight: 500;">{{item.description}}</td> -->
+              <td style="color: black; font-size: 12px;">{{item.price|currency:'INR'}}</td>
+              <td style="color: black; font-size: 12px; text-align: center;"><div class="quantity-btn"><div class="btn-dec"><button class="btn-inc-dec" (click)="quantityDecrement(item)">-</button></div>{{item.quantity}}
+                <div class="btn-inc"><button class="btn-inc-dec" (click)="quantityIncrement(item)">+</button></div></div></td>
+              <td style="color: black; font-size: 12px;">{{item.total|currency:'INR'}}</td>
               <td>
-
-                <button class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                <button class="btn btn-danger" (click)="ondelete(item)"><i class="fa fa-trash-o"></i></button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
+    <div class="cart-table-price">
+
+      <div class="cart-product-price">
+        <div class="card-price"><b>PRICE DETAILS</b></div>
+        <div class="cont"  >
+        <div class="cart-price-head"><div class="totalprice">Price</div><div class="amt">{{totalprice|currency:'INR'}}</div></div>
+        <div class="cart-price-head"><div class="totalprice">Discount</div><div class="amt" style="color: rgb(0, 144, 0);"><!--{{totaldiscountprice}}-->0</div></div>
+        <div class="cart-price-head"><div class="totalprice">Delivery Charges</div><div class="amt" style="color: rgb(0, 144, 0);">Free</div></div>
+        <div class="cart-price-head" style="border-top: 2px dotted gray;"><div class="totalprice">Total Amount</div><div class="amt" style="color: rgb(0, 144, 0); ">{{totalprice|currency:'INR'}}</div></div>
+         </div>
+         <div class="placeorder"><button>PLACE ORDER</button></div>
+      </div>
+
+    </div>
   </div>
+
+<!-- <div class="wholediv" style="width: 50%; height: 60vh; border: 2px solid red;"><input type="radio" >
+<label></label></div> -->
+
+<!-- <div class="radio-button">
+  <input type="radio" id="radio1" name="radios" value="all" checked>
+  <label for="radio1">Books</label>
+  <input type="radio" id="radio2" name="radios" >
+  <label for="radio2">Snippets</label>
+  <input type="radio" id="radio3" name="radios">
+  <label for="radio3">Quizzes</label>
+</div> -->
+
 </ng-container>
 
 
 
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="prolen===true">
+  <div class="con">
   <div class="container">
     <div class="card">
+
       <h5 class="card-title">My Cart</h5>
     </div>
     <div class="center">
 
+      <img src="/assets/cart/emptycart.gif" alt="cart img" class="cartimg">
       <h4>Your cart is empty!</h4>
       <h6>add item to it now</h6>
       <button class="btn btn-primary">Shop Now</button>
     </div>
   </div>
+</div>
 
 </ng-container>
+

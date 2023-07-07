@@ -14,8 +14,21 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
+import { SecurityComponent } from './security/security.component';
+import { HomeadminComponent } from './adminside/homeadmin/homeadmin.component';
+import { MensadminComponent } from './adminside/mensadmin/mensadmin.component';
+import { WomensadminComponent } from './adminside/womensadmin/womensadmin.component';
+import { KidsadminComponent } from './adminside/kidsadmin/kidsadmin.component';
+import { UserdetailsComponent } from './adminside/userdetails/userdetails.component';
+import { OderdetailsComponent } from './adminside/oderdetails/oderdetails.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       HomeComponent,
       MensComponent,
@@ -23,14 +36,27 @@ import { CartComponent } from './cart/cart.component';
       KidsComponent,
       LoginComponent,
       RegisterComponent,
-      CartComponent
+      CartComponent,
+      ProductdetailComponent,
+      PrivacypolicyComponent,
+      SecurityComponent,
+      HomeadminComponent,
+      MensadminComponent,
+      WomensadminComponent,
+      KidsadminComponent,
+      UserdetailsComponent,
+      OderdetailsComponent,
+      UserprofileComponent,
+
+
+
    ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,MatMenuModule,MatExpansionModule,
     MatIconModule,RouterModule, ReactiveFormsModule
   ],
   providers: [],
