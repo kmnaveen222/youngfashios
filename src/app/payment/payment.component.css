@@ -1,0 +1,219 @@
+
+
+.container2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+}
+
+
+.cardpay{
+  margin-top: 20px;
+  width: 60%;
+
+}
+.form{
+  background-color: rgb(183, 182, 182);
+  padding: 20px;
+  width: 50%;
+  border-radius: 15px;
+}
+#cardno{
+  position: relative;
+}
+.cardno{
+  font-size: 17px;
+  width: 80%;
+  border-radius: 5px;
+  padding: 17px;
+
+}
+.fa-credit-card-alt{
+  position: absolute;
+  top: 15px;
+  font-size: 19px;
+  color: rgb(221, 65, 91);
+  left:320px;
+}
+.expire{
+  font-size: 17px;
+  padding: 17px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+
+}
+.cardbtn{
+  margin-left: 20px;
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: rgb(221, 65, 91);
+  border: none;
+  display: flex;
+  margin: 10px;
+  width: 20%;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+
+}
+.cardbtn:hover{
+  transform: scale(1.1);
+  transition: all .2s ease;
+}
+.form-group{
+  display: flex;
+/* justify-content: start; */
+  margin: 20px;
+}
+.exp{
+  display: flex;
+}
+.cashondelivery{
+  padding: 10px;
+  margin: 20px 0 20px 0;
+  border-radius: 5px;
+  display: flex;
+
+  box-shadow: 2px 2px 3px 2px gray;
+}
+.cash{
+  margin: 10px 0 20px 10px;
+  padding: 10px 0 0 0;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: rgb(6, 5, 5);
+}
+.err{
+  display: flex;
+  justify-content: space-between;
+}
+/* ----------------total price--------------------- */
+
+.cart-table-price{
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin-left: 0px;
+  margin-bottom: 70px;
+}
+.cart-product-price{
+  box-shadow: 2px 2px 3px 2px gray;
+  display: flex;
+  flex-direction: column;
+  min-width: none;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip:border-box ;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  border-radius: 3px;
+
+}
+.card-price{
+  padding: 20px;
+  border-bottom: 1px solid gray;
+}
+.card-price b{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  color: gray;
+}
+.cont
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+}
+.cart-price-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.totalprice
+{
+  font-size: 19px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 550;
+}
+.amt{
+  font-size: 19px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 550;
+}
+.placeorder button{
+ margin-top: 20px;
+ padding: 20px;
+ width: 100%;
+ border: none;
+ color: #fff;
+ font-size: 15px;
+ font-family: Arial, Helvetica, sans-serif;
+ background-color: rgb(251, 81, 19);
+ box-shadow: 2px 2px 3px 2px gray;
+
+
+}
+.placeorder button:hover{
+ transform: scale(1.05);
+ transition: all 0.5s ease;
+}
+
+/* ------------product------------------------------------- */
+.pro1{
+  box-shadow: 2px 2px 3px 2px gray;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.totaltitle{
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  color: rgb(221, 65, 91);
+  margin-left: 20px;
+}
+.pro2{
+width: 60%;
+}
+.deladd{
+  border-left:2px solid gray;
+  width: 40%;
+  padding: 30px;
+
+}
+.buypro{
+  display: flex;
+  margin: 20px;
+}
+.img{
+  width: 15%;
+}
+.img img{
+  width: 90%;
+}
+.des{
+
+  margin-left: 30px;
+}
+.deltitle{
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  padding: 0px 0 20px 0;
+}
+.addr
+{
+  font-size: 17px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}

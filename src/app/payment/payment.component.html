@@ -1,0 +1,220 @@
+<div class="container">
+<div class="container1">
+  <div class="container2">
+    <div class="cardpay">
+
+
+      <mat-accordion>
+      <mat-expansion-panel hideToggle >
+        <mat-expansion-panel-header>
+          <mat-panel-title style="font-size: 17px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: 700;color:rgb(221, 65, 91);">
+           Credit / Debit / ATM Card
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+            This is a summary of the content
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <!-- <p>This is the primary content of the panel.</p> -->
+        <form [formGroup]="paycard">
+          <div class="icon-container" style="padding: 10px;">
+            <i class="fa fa-cc-visa" style="color:navy; font-size:25px; padding: 5px;"></i>
+            <i class="fa fa-cc-amex" style="color:blue;font-size:25px;padding: 5px;"></i>
+            <i class="fa fa-cc-mastercard" style="color:red;font-size:25px;padding: 5px;"></i>
+            <i class="fa fa-cc-discover" style="color:orange;font-size:25px;padding: 5px;"></i>
+          </div>
+          <div class="form">
+          <div class="form-group" id="cardno">
+            <input type="text" class="cardno" name="cardnumber" maxlength="16" formControlName="cardnumber" placeholder="Enter Card Number">
+            <i class="fa fa-credit-card-alt" ></i>
+          </div>
+          <div class="error-container">
+            <div *ngIf="paycard.controls['cardnumber'].invalid && (paycard.controls['cardnumber'].touched || paycard.controls['cardnumber'].dirty)" class="error">
+              <div *ngIf="paycard.controls['cardnumber'].errors?.['required']" class="error" style="margin-left: 20px; color: red;"> Card number is required </div>
+            </div>
+          </div>
+
+          <div class="exp">
+          <div class="form-group">
+            <input type="text" class="expire" name="cardvalid" maxlength="5" formControlName="cardvalid" placeholder="Expire: MM/YY">
+          </div>
+          <div class="form-group">
+            <input type="text" class="expire" name="cvv" maxlength="3" formControlName="cvv" placeholder="CVV">
+          </div>
+          </div>
+          <div class="err">
+        <div class="error-container">
+          <div *ngIf="paycard.controls['cardvalid'].invalid && (paycard.controls['cardvalid'].touched || paycard.controls['cardvalid'].dirty)" class="error">
+            <div *ngIf="paycard.controls['cardvalid'].errors?.['required']" class="error" style="margin-left: 20px; color: red;"> valid thru is required </div>
+          </div>
+        </div>
+        <div class="error-container">
+          <div *ngIf="paycard.controls['cvv'].invalid && (paycard.controls['cvv'].touched || paycard.controls['cvv'].dirty)" class="error">
+            <div *ngIf="paycard.controls['cvv'].errors?.['required']" class="error" style="margin-left: 20px; color: red;">CVV number is required </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <button class="cardbtn" *ngIf="buyfrom==buynow" [disabled]="!paycard.valid" (click)="oncard(products)">PAY NOW</button>
+        <button class="cardbtn" *ngIf="buyfrom!==buynow" [disabled]="!paycard.valid" (click)="oncard(cartitems)">PAY NOW</button>
+
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+
+
+
+
+    <!-- --------------------upi delivery------------------------------------------ -->
+
+
+      <mat-accordion>
+      <mat-expansion-panel hideToggle style="margin-top: 20px;">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="font-size: 17px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: 700;color:rgb(221, 65, 91);">
+          <img src="assets/features/download.jpeg" style="padding-right: 10px;"> UPI
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+            This is a summary of the content
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
+        <!-- <p>This is the primary content of the panel.</p> -->
+        <form [formGroup]="upipay">
+          <div class="form-group" >
+            <input type="text" class="cardno" name="upiid" formControlName="upiid" placeholder="Enter Your UPI ID">
+          </div>
+          <div class="error-container">
+            <div *ngIf="upipay.controls['upiid'].invalid && (upipay.controls['upiid'].touched || upipay.controls['upiid'].dirty)" class="error">
+              <div *ngIf="upipay.controls['upiid'].errors?.['required']" class="error" style="margin-left: 30px; color: red;">UPI ID is required </div>
+            </div>
+          </div>
+        <button class="cardbtn" *ngIf="buyfrom==buynow" [disabled]="!upipay.valid" (click)="onupi(products)">PAY NOW</button>
+        <button class="cardbtn" *ngIf="buyfrom!==buynow" [disabled]="!upipay.valid" (click)="onupi(cartitems)">PAY NOW</button>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+    <!-- --------------------cash on delivery------------------------------------------ -->
+<div class="cashondelivery">
+  <div class="cash">
+    <label for="cashondelivery">CASH ON DELIVERY</label></div>
+  <button class="cardbtn" *ngIf="buyfrom==buynow" (click)="oncash(products)">PAY NOW</button>
+  <button class="cardbtn" *ngIf="buyfrom!==buynow" (click)="oncash(cartitems)">PAY NOW</button>
+</div>
+
+
+    </div>
+
+
+
+    <!-- --------------------amt delivery when cartitem------------------------------------------ -->
+
+  <div class="cart-table-price" *ngIf="buyfrom!==buynow">
+
+    <div class="cart-product-price">
+      <div class="card-price"><b>PRICE DETAILS</b></div>
+      <div class="cont"  >
+      <div class="cart-price-head"><div class="totalprice">Price</div><div class="amt">{{totalprice|currency:'INR'}}</div></div>
+      <!-- <div class="cart-price-head"><div class="totalprice">Discount</div><div class="amt" style="color: rgb(0, 144, 0);">{{totaldiscountprice}}0</div></div> -->
+      <div class="cart-price-head"><div class="totalprice">Delivery Charges</div><div class="amt" style="color: rgb(0, 144, 0);">Free</div></div>
+      <div class="cart-price-head" style="border-top: 2px dotted gray;"><div class="totalprice">Total Amount</div><div class="amt" style="color: rgb(0, 144, 0); ">{{totalprice|currency:'INR'}}</div></div>
+       </div>
+       <!-- <div class="placeorder"><button>PLACE ORDER</button></div> -->
+    </div>
+  </div>
+
+    <!-- --------------------amt delivery when buynow------------------------------------------ -->
+
+  <div class="cart-table-price" *ngIf="buyfrom==buynow">
+
+    <div class="cart-product-price">
+      <div class="card-price"><b>PRICE DETAILS</b></div>
+      <div class="cont"  >
+      <div class="cart-price-head"><div class="totalprice">Price</div><div class="amt">{{products.offerprice|currency:'INR'}}</div></div>
+      <!-- <div class="cart-price-head"><div class="totalprice">Discount</div><div class="amt" style="color: rgb(0, 144, 0);">{{totaldiscountprice}}0</div></div> -->
+      <div class="cart-price-head"><div class="totalprice">Delivery Charges</div><div class="amt" style="color: rgb(0, 144, 0);">Free</div></div>
+      <div class="cart-price-head" style="border-top: 2px dotted gray;"><div class="totalprice">Total Amount</div><div class="amt" style="color: rgb(0, 144, 0); ">{{products.offerprice|currency:'INR'}}</div></div>
+       </div>
+       <!-- <div class="placeorder"><button>PLACE ORDER</button></div> -->
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- ------------------------product and address buynow--------------------------------------- -->
+<div class="pro" *ngIf="buyfrom==buynow">
+  <div class="totaltitle">CHECKOUT PRODUCTS :</div>
+  <div class="pro1">
+    <div class="pro2" *ngIf="products">
+      <div class="buypro">
+        <div class="img">
+          <img src="{{products.thumbnail}}" alt="">
+        </div>
+        <div class="des">
+        <h3 class="title">TITLE : {{products.title}}</h3>
+        <h5 class="category">CATEGORY : {{products.category}}</h5>
+          <h5 class="size">SIZE : {{size}}</h5>
+          <h5 class="disc" style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 50ch;">DESCRIPTION : {{products.description}}</h5>
+      </div>
+      </div>
+    </div>
+
+    <div class="deladd" *ngIf="getaddressdata">
+      <div class="deltitle">
+        DELIVERY TO:
+      </div>
+      <div class="addr">
+        <div class="user">{{getaddressdata.username}}</div>
+        <div class="user">{{getaddressdata.phnumber}}</div>
+        <div class="user">{{getaddressdata.address}}</div>
+        <div class="user">{{getaddressdata.city}}</div>
+        <div class="user">{{getaddressdata.state}} - {{getaddressdata.pincode}}</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------product and address caartitems--------------------------------------- -->
+<div class="pro" *ngIf="buyfrom!==buynow">
+  <div class="totaltitle">CHECKOUT PRODUCTS :</div>
+  <ng-container *ngFor="let item of cartitems">
+  <div class="pro1">
+    <div class="pro2" >
+      <div class="buypro">
+        <div class="img">
+          <img src="{{item.thumbnail}}" alt="">
+        </div>
+        <div class="des">
+        <h3 class="title">TITLE : {{item.title}}</h3>
+        <h5 class="category">CATEGORY : {{item.category}}</h5>
+          <h5 class="size">SIZE : {{item.selectedsize}}</h5>
+          <h5 class="size">QUANTITY : {{item.quantity}}</h5>
+          <h5 class="size">PRICE : {{item.total}}</h5>
+          <h5 class="disc" style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 50ch;">DESCRIPTION : {{item.description}}</h5>
+      </div>
+      </div>
+    </div>
+
+    <div class="deladd" *ngIf="getaddressdata">
+      <div class="deltitle">
+        DELIVERY TO:
+      </div>
+      <div class="addr">
+        <div class="user">{{getaddressdata.username}}</div>
+        <div class="user">{{getaddressdata.phnumber}}</div>
+        <div class="user">{{getaddressdata.address}}</div>
+        <div class="user">{{getaddressdata.city}}</div>
+        <div class="user">{{getaddressdata.state}} - {{getaddressdata.pincode}}</div>
+
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+</div>

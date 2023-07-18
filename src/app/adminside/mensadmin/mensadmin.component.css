@@ -30,8 +30,9 @@ font-weight: 900;
   margin: 10px;
 }
 .form form .form-group input{
+  border-radius: 5px;
   width: 90%;
-  padding: 7px;
+  padding: 9px;
 }
 form{
   display: flex;
@@ -47,6 +48,7 @@ form .form-group textarea{
 
 }
 .sizes .form-group-size input{
+  border-radius: 5px;
 width: 40px;
 padding: 3px;
   margin-left: 5px;
@@ -58,6 +60,7 @@ padding: 3px;
 .form-group-button input{
   margin: 10px;
   margin-bottom: 20px;
+  border-radius: 5px;
   width: 90%;
   padding: 8px;
   color: white;

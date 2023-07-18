@@ -1,33 +1,155 @@
-<mat-accordion>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
+
+<div class="head">
+  <div class="head1">USER INFORMATION :-</div>
+</div>
+
+<!-- --------------------------personal information----------------------------------------------- -->
+<div class="title">Personal Information :-</div>
+<mat-accordion style="display: flex;justify-content: center;">
+  <ng-container *ngIf="profile">
+  <mat-expansion-panel style="width: 90%;"  (click)="onedit(profile)">
+    <mat-expansion-panel-header >
       <mat-panel-title>
-        This is the expansion title
+        <div class="username"><span>Username : {{profile.username}}</span>
+          Email ID : {{profile.emailid}}
+        </div>
       </mat-panel-title>
-      <mat-panel-description>
-        This is a summary of the content
-      </mat-panel-description>
+      <div class="edit" hideToggle><button>EDIT</button></div>
     </mat-expansion-panel-header>
+    <form [formGroup]="userinfo">
+      <div class="userinfo">
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="username" formControlName="username" placeholder="Enter Your username">
+        </div>
+        <div class="error-container">
+          <div *ngIf="userinfo.controls['username'].invalid && (userinfo.controls['username'].touched || userinfo.controls['username'].dirty)" class="error">
+            <div *ngIf="userinfo.controls['username'].errors?.['required']" class="error"> First Name is required </div>
+            <div *ngIf="userinfo.controls['username'].errors?.['minlength']" class="error">First Name Minimum Length is 4</div>
+          </div>
+        </div></div>
 
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="email" formControlName="emailid" placeholder="Enter Email ID">
+        </div>
+        <div class="error-container">
+          <div *ngIf="userinfo.controls['emailid'].invalid && (userinfo.controls['emailid'].touched || userinfo.controls['emailid'].dirty)" class="error">
+            <div *ngIf="userinfo.controls['emailid'].errors?.['required']" class="error"> Emailid is required </div>
+            <div *ngIf="userinfo.controls['emailid'].errors?.['email']" class="error">Enter a correct emailid</div>
+          </div>
+        </div>
+      </div>
 
-    <p>This is the primary content of the panel.</p>
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="email" formControlName="password" placeholder="Enter Your password">
+        </div>
+        <div class="error-container">
+          <div *ngIf="userinfo.controls['password'].invalid && (userinfo.controls['password'].touched || userinfo.controls['password'].dirty)" class="error">
+            <div *ngIf="userinfo.controls['password'].errors?.['required']" class="error"> password is required </div>
+            <div *ngIf="userinfo.controls['password'].errors?.['minlength']" class="error"> Enter a password atleast 8 to 15 characters </div>
+            <div *ngIf="userinfo.controls['password'].errors?.['pattern']" class="error">password should contains one special,caps,small & numbers characters</div>
+          </div>
+        </div>
+      </div>
+
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="email" formControlName="cpassword" placeholder="Enter Your confirm password">
+        </div>
+        <div class="error-container">
+          <div *ngIf="userinfo.controls['cpassword'].invalid && (userinfo.controls['cpassword'].touched || userinfo.controls['cpassword'].dirty)" class="error">
+            <div *ngIf="userinfo.controls['cpassword'].errors?.['required']" class="error">Confirm password is required </div>
+            <div *ngIf="userinfo.controls['cpassword'].errors?.['Confirmedvalidators']" class="error"> Your password and confirrm password don't match </div>
+          </div>
+        </div>
+      </div>
+      </div>
+        <div class="submit" (click)="onupdate()"><button>SUBMIT</button></div>
+    </form>
   </mat-expansion-panel>
+</ng-container>
+</mat-accordion>
 
 
 
-  <mat-expansion-panel (opened)="panelOpenState = true"
-  (closed)="panelOpenState = false">
-<mat-expansion-panel-header>
-<mat-panel-title>
-Self aware panel
-</mat-panel-title>
-<mat-panel-description>
-Currently I am {{panelOpenState ? 'open' : 'closed'}}
-</mat-panel-description>
-</mat-expansion-panel-header>
-<p>I'm visible because I am open</p>
-</mat-expansion-panel>
+
+<!-- --------------------------ADDRESS information----------------------------------------------- -->
+
+<div class="title">ADDRESS :-</div>
+
+<mat-accordion style="display: flex;justify-content: center; align-items: center; flex-direction: column; margin: 20px;">
+  <ng-container *ngFor="let item of getaddressdata">
+  <mat-expansion-panel style="width: 90%;padding: 10px;" (click)="oneditaddress(item)">
+    <mat-expansion-panel-header style="padding: 20px;">
+      <mat-panel-title >
+        <div class="container">
+          <div class="container1" >
+            <div class="container2" >
+              <div class="addr"  >
+              <label class="username" for="address">{{item.username}}</label>
+              <label class="Homeorwork" style="padding: 10px;"  for="address{{item.id}}">{{item.Homeorwork}}</label>
+              <label class="phnumber"style="padding: 10px;" for="address{{item.id}}">{{item.phnumber}}</label>
+              <label class="address1"style="padding: 10px;" for="address{{item.id}}">{{item.address}}</label>
+              <label class="city"style="padding: 10px;" for="address{{item.id}}">{{item.city}}</label>
+              <label class="state"style="padding: 10px;" for="address{{item.id}}">{{item.state}}</label>
+              <label class="pincode" for="address{{item.id}}"> - {{item.pincode}}</label><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-panel-title>
+      <div class="edit" hideToggle><button>EDIT</button></div>
+    </mat-expansion-panel-header>
+    <form [formGroup]="addressform">
+      <div class="userinfo" style="display: flex;flex-wrap: wrap;">
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="username" formControlName="username" placeholder="Enter Your username">
+        </div>
+        </div>
+        <div class="confpass">
+        <div class="form-group">
+          <input type="number" maxlength="10" name="phnumber" formControlName="phnumber" placeholder="Enter Your phone number">
+        </div>
+        </div>
+        <div class="confpass">
+        <div class="form-group">
+          <input type="number" maxlength="6" name="pincode" formControlName="pincode" placeholder="Enter Your pincode">
+        </div>
+        </div>
+        <div class="confpass" style="width: 50%;">
+        <div class="form-group" >
+          <input type="text" style="width: 100%;" name="address"  formControlName="address" placeholder="Enter Your address">
+        </div>
+        </div>
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="locality" formControlName="locality" placeholder="Enter Your locality">
+        </div>
+        </div>
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="city" formControlName="city" placeholder="Enter Your city">
+        </div>
+        </div>
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="state" formControlName="state" placeholder="Enter Your state">
+        </div>
+      </div>
+        <div class="confpass">
+        <div class="form-group">
+          <input type="text" name="Homeorwork" formControlName="Homeorwork" placeholder="Enter Your Place Eg: Home (or) work">
+        </div>
+      </div>
+
+      </div>
+        <div class="submit" (click)="onupdateaddress()"><button>SUBMIT</button> <button (click)="ondeleteaddress(item)">DELETE</button></div>
 
 
-
+    </form>
+  </mat-expansion-panel>
+</ng-container>
 </mat-accordion>

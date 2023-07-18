@@ -24,8 +24,18 @@ import { KidsadminComponent } from './adminside/kidsadmin/kidsadmin.component';
 import { UserdetailsComponent } from './adminside/userdetails/userdetails.component';
 import { OderdetailsComponent } from './adminside/oderdetails/oderdetails.component';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ImagechangeDirective } from './productdetail/imagechange.directive';
+import { AddressComponent } from './address/address.component';
+import { PaymentComponent } from './payment/payment.component';
+import { AfterorderComponent } from './afterorder/afterorder.component';
+import { MyorderComponent } from './myorder/myorder.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +57,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
       UserdetailsComponent,
       OderdetailsComponent,
       UserprofileComponent,
+      ImagechangeDirective,
+      AddressComponent,
+      PaymentComponent,
+      AfterorderComponent,
+      MyorderComponent,
+      WishlistComponent,
+
 
 
 
@@ -56,8 +73,17 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,MatMenuModule,MatExpansionModule,
-    MatIconModule,RouterModule, ReactiveFormsModule
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    RouterModule,
+    ReactiveFormsModule,
+    MatDialogModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

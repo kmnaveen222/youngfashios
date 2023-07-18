@@ -17,6 +17,7 @@ discountprice: number=0;
 totaldiscountprice: number=0;
 prolen:boolean=false;
 url:any='http://localhost:3000';
+  buynow: any="cartpro";
   constructor(private http:HttpClient, private cartservice:CartserviceService) {
 
    }
@@ -34,11 +35,12 @@ url:any='http://localhost:3000';
     });
     if(user){
       this.product =user;
+      // console.log("us",user.price);
       for(var pro in this.product){
-        var oprice=this.product[pro].price;
-        console.log("oprice",oprice);
+        var oprice=this.product[pro].total;
+        // console.log("oprice",oprice);
         var disprice=this.product[pro].offerprice;
-        console.log("offerprice",disprice);
+        // console.log("offerprice",disprice);
         this.totalprice=this.totalprice+oprice;
         console.log("totalprice",this.totalprice);
         this.totalamount+=disprice;
@@ -48,9 +50,9 @@ url:any='http://localhost:3000';
 
       }
       console.log("tprice",this.totaldiscountprice);
-      // if(this.product.length==0){
-      //   this.prolen=true;
-      // }
+      if(this.product.length==0){
+        this.prolen=true;
+      }
     }
 
     });
@@ -85,6 +87,14 @@ quantityDecrement(item:any){
     })
   }
 }
+
+
+// ------------------------------placeorder------------------------------------------------------
+
+onorder(){
+  localStorage.setItem('buyfrom',this.buynow);
+}
+// ------------------------------delete product------------------------------------------------------
 ondelete(item:any){
 
   // console.log(this.url+'/cart/'+`${item.id}`)

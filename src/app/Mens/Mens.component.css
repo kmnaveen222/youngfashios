@@ -115,11 +115,11 @@ padding-right: 10px;
   transition-delay: 0.3s;
 }
 .container .card:hover .action li{
-  transition: 1s;
+  transition:all .3s ease;
   transform: translateX(0px);
 }
 .action li:hover{
-background-color: red;
+background-color: grey;
 color: white;
 }
 .action li span{
@@ -187,45 +187,5 @@ margin-left: 5px;
 /* -------------product price rating end-------------- */
 
 
-
-/* ---------cart and buynow button start----------- */
-
-.butn a{
-  display: flex;
-  text-decoration: none;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 4px;
-
-
-}
-.butn a button{
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
-.butn .cart-btn{
-  background-color: rgba(242, 180, 65, 0.902);
-}
-.butn .cart-btn:hover{
-  transition: all 0.2s ease;
-  background-color: rgb(238, 163, 25);
-
-
-}
-
-.butn .buynow-btn{
-  background-color: rgb(208, 208, 208);
-}
-.butn .buynow-btn:hover{
-  background-color: rgb(169, 168, 168);
-
-  transition: all 0.2s ease;
-}
-
-/* ---------cart and buynow button end----------- */
 
 /* ----------------------------------product card END----------------------------------------------*/

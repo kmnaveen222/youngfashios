@@ -18,7 +18,7 @@
 <nav class="items">
   <ul>
     <li><a routerLink="home">HOME</a></li>
-    <li><a routerLink="mens">MENS</a></li>
+    <li><a routerLink="mens" >MENS</a></li>
     <li><a routerLink="womens">WOMENS</a></li>
     <li><a routerLink="kids">KIDS</a></li>
   </ul>
@@ -53,13 +53,13 @@
 
 <div class="login" >
 
-  <button class="account" mat-button [matMenuTriggerFor]="menu"><i class="fa fa-user"></i>ACCOUNT<i class="fa fa-caret-down"></i></button>
+  <button class="account"  mat-button [matMenuTriggerFor]="menu"><i class="fa fa-user"></i>ACCOUNT<i class="fa fa-caret-down"></i></button>
 <mat-menu #menu="matMenu" class="sub-profile">
   <div class="sub">
     <div class="user-name" *ngIf="loggedemailid==null">Hello User!</div>
     <div class="user-name" *ngIf="loggedemailid!==null">Hello {{loggedname}}!</div>
-  <div class="user-info"><a routerLink="userprofile">My Profile</a></div>
-  <div class="user-info"><a routerLink="">My Orders</a></div>
+  <div class="user-info" *ngIf="adminlogin==true"><a routerLink="userprofile">My Profile</a></div>
+  <div class="user-info" *ngIf="adminlogin==true"><a routerLink="myorder">My Orders</a></div>
 
   <div *ngIf="loggedemailid==null" style="cursor:pointer;" class="user-info"><a routerLink="login">Login</a></div>
   <div *ngIf="loggedemailid!==null" style="cursor:pointer;" class="user-info"><a (click)="logout()">Logout</a></div>
@@ -68,7 +68,7 @@
 
 <ng-container *ngIf="adminlogin==true">
 
-  <a routerLink=""><div class="shopping-cart"> <div class="cart-icon" ><i class="fa fa-heart"></i></div><div class="cart-name">WISHLIST</div></div></a>
+  <!-- <a routerLink="wishlist"><div class="shopping-cart"> <div class="cart-icon" ><i class="fa fa-heart"></i></div><div class="cart-name">WISHLIST</div></div></a> -->
   <a routerLink="cart"><div class="shopping-cart"><div class="cart-icon" ><i class="fa fa-cart-arrow-down"></i>
 </div>
   <div class="cart-name">CART</div></div></a>

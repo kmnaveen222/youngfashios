@@ -1,3 +1,44 @@
-<p>
-  Womens works!
-</p>
+<div class="container" >
+  <ng-container *ngFor="let item of pro">
+  <div class="card" >
+      <div class="imgbx">
+          <img src="{{item.thumbnail}}" >
+          <ul class="action">
+            <!-- <li><i class="fa fa-heart-o" ></i><span>Add to Wishlist</span></li> -->
+            <!-- <li (click)="Addtocart(item)"><i class="fa fa-cart-plus" ></i><span>Add to Cart</span></li> -->
+            <li (click)="onclickdepartment(item)" routerLink="/productdetail/{{item.id}}"><i class="fa fa-eye" ></i><span>View Details</span></li>
+
+          </ul>
+      </div>
+     <div class="product-details" (click)="onclickdepartment(item)" routerLink="/productdetail/{{item.id}}">
+         <h3>{{item.title}}</h3>
+         <h5>{{item.category}}</h5>
+         <p style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
+        <div class="price">
+          <h4><span *ngIf="offerdisprice===true">{{item.offerprice|currency:'INR'}}</span>
+            <span *ngIf="offerdisprice===false">{{item.price|currency:'INR'}}</span>
+            <s><span *ngIf="offerdisprice===true">{{item.price|currency:'INR'}}</span></s>
+
+             <span class="offer-percent" *ngIf="offerdisprice===true">{{item.discountPercentage}}%</span></h4>
+            <!-- <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star gray"></i>
+            </div> -->
+        </div>
+        <!-- <button [disabled]="item.sizeS==0">S</button>
+        <button>M</button>
+        <button>L</button>
+        <button>XL</button> -->
+
+        <h5>FREE Delivery</h5>
+      </div>
+
+    </div>
+
+  </ng-container>
+
+</div>

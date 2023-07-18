@@ -17,15 +17,17 @@ constructor(private http:HttpClient,private forms:FormBuilder){}
 
 
 addproduct=this.forms.group({
+
+
   title:[,[Validators.required]],
   brand:[,[Validators.required]],
   category:[,[Validators.required]],
   description:[,[Validators.required]],
   descrip:[,[Validators.required]],
-  Department:[,[Validators.required]],
+  Department:['kids',[Validators.required]],
   price:[,[Validators.required]],
   offerprice:[,[Validators.required]],
-  Country:[,[Validators.required]],
+  Country:['India',[Validators.required]],
   Manufacturer:[,[Validators.required]],
   sizeS:[,[Validators.required]],
   sizeM:[,[Validators.required]],
@@ -42,13 +44,11 @@ addproduct=this.forms.group({
 
 
 ngOnInit(){
-
   this.getproduct();
+
 }
 submit(){
   console.log(this.addproduct.value);
-
-
   if(this.addproduct.valid){
     this.http.post("http://localhost:3000/kids-product",this.addproduct.value).subscribe(data=>{
           alert("Form submitted");
@@ -57,14 +57,13 @@ submit(){
 
         })
       }
-
 }
 
 getproduct(){
   this.http.get(this.url+'/kids-product').subscribe(res=>{
     this.pro = res;
-
    })
+
   }
 
 

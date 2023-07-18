@@ -1,0 +1,83 @@
+
+<!-- ----------------------------Address display------------------------------- -->
+<div class="container">
+
+  <div class="container1" >
+    <div class="title">DELIVERY ADDRESS</div>
+    <div class="container2" *ngFor="let item of getaddressdata">
+      <div class="addr"  >
+
+      <input type="radio" value="address" name="address" id="address{{item.id}}" (click)="onclick()"><label class="username" for="address">{{item.username}}</label>
+      <label class="Homeorwork"  for="address{{item.id}}">{{item.Homeorwork}}</label>
+      <label class="phnumber" for="address{{item.id}}">{{item.phnumber}}</label>
+
+   <input type="submit" value="Edit" class="edit" id="editform" (click)="onedit(item)"><br>
+   <!-- <input type="submit" value="Delete" class="delete"  (click)="ondelete(item)"><br> -->
+      <label class="address1" for="address{{item.id}}">{{item.address}}</label>
+      <label class="city" for="address{{item.id}}">{{item.city}}</label>
+      <label class="state" for="address{{item.id}}">{{item.state}}</label>
+      <label class="pincode" for="address{{item.id}}"> - {{item.pincode}}</label><br>
+      <a routerLink="/{{productid}}/{{item.id}}/payment" *ngIf="buyfrom==buynow"><button  class="deliverybtn" (click)="ondelivery(item)" *ngIf="panelOpenState==true"><label for="address{{item.id}}"> Delivery Here</label></button></a>
+      <a routerLink="/{{item.id}}/payment" *ngIf="buyfrom!==buynow"><button  class="deliverybtn" (click)="ondelivery(item)" *ngIf="panelOpenState==true"><label for="address{{item.id}}"> Delivery Here</label></button></a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ------------------------------add address form------------------------------- -->
+<div class="address"  style="display: flex; justify-content: center;">
+<mat-expansion-panel [disabled]="true" [expanded]="true"  style="width: 80%;">
+  <mat-expansion-panel-header >
+    <mat-panel-title>
+      <span style="margin-right: 20px;" class="addicon"><i class="fa fa-plus"></i></span>
+      <span class="title" *ngIf="updatingdata==false">Add a New Address</span>
+      <span class="title" *ngIf="updatingdata==true">Update Address</span>
+    </mat-panel-title>
+    <!-- <mat-panel-description>
+
+    </mat-panel-description> -->
+  </mat-expansion-panel-header>
+  <form [formGroup]="addressform" >
+    <div class="formgrp">
+      <div class="form-group">
+        <input type="text" name="name" formControlName="username" placeholder="Name">
+      </div>
+      <div class="form-group">
+        <input type="number" name="phno" formControlName="phnumber" placeholder="10-Digit mobile number">
+      </div>
+      <div class="form-group">
+        <input type="number" name="pincode" formControlName="pincode" placeholder="Pin Code">
+      </div>
+      <div class="form-group">
+        <input type="text" name="Address" formControlName="address" placeholder="Address (House No, Building, Street, Area)">
+      </div>
+      <div class="form-group">
+        <input type="text" name="Locality" formControlName="locality" placeholder="Locality/Town">
+      </div>
+      <div class="form-group">
+        <input type="text" name="city" formControlName="city" placeholder="City/District">
+      </div>
+      <div class="form-group">
+        <input type="text" name="state" formControlName="state" placeholder="State">
+      </div>
+    </div>
+    <div class="form-group-radio">
+      <input type="radio" value="home" name="Homeorwork" id="home" formControlName="Homeorwork"><label for="home">Home (All day delivery)</label>
+      <input type="radio" value="work" name="Homeorwork" id="work" formControlName="Homeorwork"><label for="work">Work (Delivery between 10AM - 5PM)</label>
+    </div>
+
+    <div class="butn">
+    <input type="submit"  [disabled]="!this.addressform.valid" *ngIf="updatingdata==false" (click)="addaddress()" value="Add Address" class="cart-btn" >
+    <input type="submit" [disabled]="!this.addressform.valid" *ngIf="updatingdata==true" (click)="updateaddress()" value="Update Address" class="cart-btn" >
+    <input type="submit"  (click)="cancel()" value="cancel" class="cancel-btn" ></div>
+
+   </form>
+</mat-expansion-panel>
+</div>
+
+
+

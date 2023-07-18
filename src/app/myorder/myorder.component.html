@@ -1,0 +1,57 @@
+
+<div class="head">MY ORDERS : </div>
+
+<div class="con" *ngIf="myorderproduct==false">
+<ng-container *ngFor="let item of orderdata" >
+  <mat-expansion-panel hideToggle style="margin: 10px 0 10px 0;">
+  <mat-expansion-panel-header style="width: 100%; height: 20vh;">
+    <mat-panel-title>
+      <div class="img"><img src="{{item.thumbnail}}" style="width: 90%;"></div>
+      <div class="titlecon">
+      <div class="title"><span>Title : </span>{{item.title}}</div>
+      <div class="title"><span>Category : </span>{{item.category}}</div>
+      <div class="title"><span>Order ID : </span>{{item.orderid}}</div>
+      <div class="title"><span>Size : </span>{{item.selectedsize}}</div>
+      <div class="title"><span>Quantity : </span>{{item.quantity}}</div>
+    </div>
+    </mat-panel-title>
+    <mat-panel-description>
+      {{item.description}}
+    </mat-panel-description>
+<div class="topstatus" >
+    <div class="status" ><span>Order Status :</span><span class="status1" >{{item.orderstatus}}</span>
+    </div>
+    <button class="cancel" [disabled]="item.orderstatus==orderstatus3" (click)="oncancel(item)">Cancel Order</button>
+  </div>
+  </mat-expansion-panel-header>
+  <div class="addr">
+    <p class="payment1">Delivery TO :</p>
+  <p class="payment"><span>Payment Type : </span>{{item.Paymenttype}}</p>
+  <p class="payment"><span>username : </span>{{item.username}}</p>
+  <p class="payment"><span>Address : </span>{{item.address}}</p>
+  <p class="payment"><span>City : </span>{{item.Paymenttype}}</p>
+  <p class="payment"><span>State : </span>{{item.state}}-{{item.pincode}}</p>
+</div>
+</mat-expansion-panel>
+</ng-container>
+</div>
+
+
+
+
+<ng-container *ngIf="myorderproduct===true">
+  <div class="con">
+  <div class="container">
+    <div class="card">
+
+    </div>
+    <div class="center">
+      <img src="/assets/cart/emptycart.gif" alt="cart img" class="cartimg">
+      <h4>Your Order Page is empty!</h4>
+      <h6>Buy Products now</h6>
+      <a routerLink="home"><button class="btn btn-primary">Shop Now</button></a>
+    </div>
+  </div>
+</div>
+
+</ng-container>

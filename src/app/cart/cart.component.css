@@ -145,11 +145,12 @@ tr td  .btn-danger{
 
 /* ----------------total amt style------------- */
 .cart-table-price{
-  height: 54vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   width: 30%;
   margin-left: 0px;
+  margin-bottom: 70px;
 }
 .cart-product-price{
   box-shadow: 2px 2px 3px 2px gray;
@@ -163,6 +164,7 @@ tr td  .btn-danger{
   margin-bottom: 20px;
   width: 80%;
   border-radius: 3px;
+
 }
 .card-price{
   padding: 20px;
@@ -205,6 +207,7 @@ tr td  .btn-danger{
  font-family: Arial, Helvetica, sans-serif;
  background-color: rgb(251, 81, 19);
  box-shadow: 2px 2px 3px 2px gray;
+
 
 }
 .placeorder button:hover{

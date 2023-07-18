@@ -1,1 +1,44 @@
-<p>oderdetails works!</p>
+
+<div class="con" >
+  <ng-container *ngFor="let item of orderdata" >
+    <mat-expansion-panel hideToggle style="margin: 10px 0 10px 0;">
+    <mat-expansion-panel-header style="width: 100%; height: 20vh;">
+      <mat-panel-title>
+        <div class="img"><img src="{{item.thumbnail}}" style="width: 90%;"></div>
+        <div class="titlecon">
+        <div class="title"><span>Title : </span>{{item.title}}</div>
+        <div class="title"><span>Order ID : </span>{{item.orderid}}</div>
+        <div class="title"><span>Username : </span>{{item.username}}</div>
+        <div class="title"><span>Email : </span>{{item.email}}</div>
+        <div class="title"><span>Quantity : </span>{{item.quantity}}</div>
+      </div>
+      </mat-panel-title>
+      <mat-panel-description>
+        {{item.description}}
+      </mat-panel-description>
+      <div class="status"><span>Order Status :</span><span class="status1">{{item.orderstatus}}</span></div>
+
+    </mat-expansion-panel-header>
+    <div class="tot" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+    <div class="addr">
+      <p class="payment1">Delivery TO :</p>
+    <p class="payment"><span>Payment Type : </span>{{item.Paymenttype}}</p>
+    <p class="payment"><span>username : </span>{{item.username}}</p>
+    <p class="payment"><span>Address : </span>{{item.address}}</p>
+    <p class="payment"><span>City : </span>{{item.Paymenttype}}</p>
+    <p class="payment"><span>State : </span>{{item.state}}-{{item.pincode}}</p>
+  </div>
+  <div class="titlecon">
+    <p class="payment1">Description :</p>
+    <div class="title"><span>Title : </span>{{item.title}}</div>
+    <div class="title"><span>Category : </span>{{item.category}}</div>
+    <div class="title"><span>Order ID : </span>{{item.orderid}}</div>
+    <div class="title"><span>Size : </span>{{item.selectedsize}}</div>
+    <div class="title"><span>Quantity : </span>{{item.quantity}}</div>
+  </div>
+  <div class="status" *ngIf="item.orderstatus!==orderstatus4"><span>Order Status :</span><button [disabled]="item.orderstatus==(orderstatus3||orderstatus4)" (click)="onorderstatus(item)">{{item.orderstatus}}</button></div>
+
+</div>
+  </mat-expansion-panel>
+  </ng-container>
+  </div>

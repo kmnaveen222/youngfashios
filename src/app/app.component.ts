@@ -15,6 +15,9 @@ export class AppComponent {
   loggedemailid: string | any;
   adminlogin:boolean=true;
   loggedname:any;
+  mens:any="mens";
+  womens:any="womens";
+  kids:any="kids";
 
   constructor(private service:DbseviceService, private router:Router, private http:HttpClient){
 
@@ -24,8 +27,7 @@ export class AppComponent {
     this.loggedemailid=localStorage.getItem('loggedemailid');
     this.loggedname=localStorage.getItem('loggedename');
 
-if(this.loggedemailid =='')
-{
+if(this.loggedemailid ==''){
   this.loggedemailid =null;
 }
 this.getadmin();
@@ -45,6 +47,7 @@ this.getadmin();
 
 logout(){
   localStorage.removeItem('loggedemailid');
+  localStorage.removeItem('loggedename');
   console.log("3",this.adminlogin);
   this.adminlogin=true;
   console.log("4",this.adminlogin);
@@ -52,10 +55,24 @@ logout(){
     window.location.reload();
 
   })
+
+
   }
 
+//   onclickmens(){
+// localStorage.setItem("department",this.mens);
+//   }
+//   onclickwomens(){
+//     localStorage.setItem("department",this.womens);
 
+//   }
+//   onclickkids(){
+//     localStorage.setItem("department",this.kids);
+
+//   }
 }
+
+
 
 
 

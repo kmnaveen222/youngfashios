@@ -16,6 +16,11 @@ import { KidsadminComponent } from './adminside/kidsadmin/kidsadmin.component';
 import { UserdetailsComponent } from './adminside/userdetails/userdetails.component';
 import { OderdetailsComponent } from './adminside/oderdetails/oderdetails.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { AuthguardGuard } from './service/authguard.guard';
+import { AddressComponent } from './address/address.component';
+import { PaymentComponent } from './payment/payment.component';
+import { MyorderComponent } from './myorder/myorder.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -39,16 +44,43 @@ const routes: Routes = [
     component:LoginComponent,
   },
   {
+    path:'myorder',
+    component:MyorderComponent,
+  },{
+    path:'wishlist',
+    component:WishlistComponent,
+  },
+  {
     path:'cart',
     component:CartComponent,
+    canActivate:[AuthguardGuard],
   },
    {
       path:"register",
       component:RegisterComponent
   },
   {
+    path:'address',
+    component:AddressComponent,
+    canActivate:[AuthguardGuard],
+  },
+  {
+    path:':id/address',
+    component:AddressComponent,
+  },
+  {
+    path:':addressid/payment',
+    component:PaymentComponent,
+  },
+  {
+    path:':id/:addressid/payment',
+    component:PaymentComponent,
+  },
+  {
     path:"userprofile",
-    component:UserprofileComponent
+    component:UserprofileComponent,
+    canActivate:[AuthguardGuard],
+
 },
   {
     path:"privacypolicy",

@@ -28,7 +28,8 @@
               <td> <img src="{{item.thumbnail}}" class="proimage"></td>
               <td style="color: black; font-size: 15px; font-weight: 500;">{{item.title}}</td>
               <!-- <td style="color: black; font-size: 12px; font-weight: 500;">{{item.description}}</td> -->
-              <td style="color: black; font-size: 12px;">{{item.price|currency:'INR'}}</td>
+              <td style="color: black; font-size: 12px;" *ngIf="item.discountPercentage==0|| item.discountPercentage==null">{{item.price|currency:'INR'}}</td>
+              <td style="color: black; font-size: 12px;">{{item.offerprice|currency:'INR'}}</td>
               <td style="color: black; font-size: 12px; text-align: center;"><div class="quantity-btn"><div class="btn-dec"><button class="btn-inc-dec" (click)="quantityDecrement(item)">-</button></div>{{item.quantity}}
                 <div class="btn-inc"><button class="btn-inc-dec" (click)="quantityIncrement(item)">+</button></div></div></td>
               <td style="color: black; font-size: 12px;">{{item.total|currency:'INR'}}</td>
@@ -47,11 +48,11 @@
         <div class="card-price"><b>PRICE DETAILS</b></div>
         <div class="cont"  >
         <div class="cart-price-head"><div class="totalprice">Price</div><div class="amt">{{totalprice|currency:'INR'}}</div></div>
-        <div class="cart-price-head"><div class="totalprice">Discount</div><div class="amt" style="color: rgb(0, 144, 0);"><!--{{totaldiscountprice}}-->0</div></div>
+        <!-- <div class="cart-price-head"><div class="totalprice">Discount</div><div class="amt" style="color: rgb(0, 144, 0);">{{totaldiscountprice}}0</div></div> -->
         <div class="cart-price-head"><div class="totalprice">Delivery Charges</div><div class="amt" style="color: rgb(0, 144, 0);">Free</div></div>
         <div class="cart-price-head" style="border-top: 2px dotted gray;"><div class="totalprice">Total Amount</div><div class="amt" style="color: rgb(0, 144, 0); ">{{totalprice|currency:'INR'}}</div></div>
          </div>
-         <div class="placeorder"><button>PLACE ORDER</button></div>
+         <a routerLink="/address"><div class="placeorder"><button (click)="onorder()">PLACE ORDER</button></div></a>
       </div>
 
     </div>
@@ -86,7 +87,7 @@
       <img src="/assets/cart/emptycart.gif" alt="cart img" class="cartimg">
       <h4>Your cart is empty!</h4>
       <h6>add item to it now</h6>
-      <button class="btn btn-primary">Shop Now</button>
+      <a routerLink="home"><button class="btn btn-primary">Shop Now</button></a>
     </div>
   </div>
 </div>
