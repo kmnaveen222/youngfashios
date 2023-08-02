@@ -46,6 +46,7 @@ const routes: Routes = [
   {
     path:'myorder',
     component:MyorderComponent,
+    canActivate:[AuthguardGuard],
   },{
     path:'wishlist',
     component:WishlistComponent,
@@ -67,10 +68,12 @@ const routes: Routes = [
   {
     path:':id/address',
     component:AddressComponent,
+    canActivate:[AuthguardGuard],
   },
   {
     path:':addressid/payment',
     component:PaymentComponent,
+    canActivate:[AuthguardGuard],
   },
   {
     path:':id/:addressid/payment',

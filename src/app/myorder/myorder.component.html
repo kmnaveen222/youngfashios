@@ -1,10 +1,11 @@
 
 <div class="head">MY ORDERS : </div>
 
-<div class="con" *ngIf="myorderproduct==false">
+
 <ng-container *ngFor="let item of orderdata" >
-  <mat-expansion-panel hideToggle style="margin: 10px 0 10px 0;">
-  <mat-expansion-panel-header style="width: 100%; height: 20vh;">
+  <div class="con" *ngIf="myorderproduct==false">
+  <mat-expansion-panel hideToggle style=" width: 100%;margin: 4px 0 0px 0;">
+  <mat-expansion-panel-header style=" width: 100%; height: 30vh;">
     <mat-panel-title>
       <div class="img"><img src="{{item.thumbnail}}" style="width: 90%;"></div>
       <div class="titlecon">
@@ -33,8 +34,9 @@
   <p class="payment"><span>State : </span>{{item.state}}-{{item.pincode}}</p>
 </div>
 </mat-expansion-panel>
-</ng-container>
 </div>
+</ng-container>
+
 
 
 

@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
   constructor(private http:HttpClient,private route:Router,private router:ActivatedRoute,private dbservice:DbseviceService ,private forms:FormBuilder) { }
 
   LoginForm = this.forms.group({
-    emailid:[,[Validators.required, Validators.email]],
-    password:[,[Validators.required,Validators.minLength(8),Validators.maxLength(15)]],
+    // emailid:[,[Validators.required, Validators.email]],
+    emailid:[,[Validators.required, Validators.email,Validators.pattern(/^(?!.*([a-z])\1{3})[a-z0-9]+(\.[a-z0-9]+)*@([\w-]+\.)+(com|net|org|edu|gov|int|mil|biz|info|name|museum|coop|aero|[a-z]{2})$/)]],
+    password:[,[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]){8,32}.+$/)]],
   })
 
 
@@ -94,8 +95,6 @@ this.http.get<any>("http://localhost:3000/users").subscribe(res=>{
   }
 })
   }
-
-
 
   // ----------------to password view----------------------
   togglePasswordVisibility(): void {

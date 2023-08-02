@@ -24,7 +24,7 @@
     letter-spacing: 2px;
     background: -webkit-linear-gradient(45deg,#dc3d7a, #7a078a);
     background-clip:text;
-  -webkit-text-fill-color: transparent;
+
     font-size: 26px;
     font-family: "Courier New", Courier, monospace;
     font-weight: 700;
@@ -73,7 +73,8 @@ width: 100%;
   width: 200px;
   height: 250px;
   padding: 10px;
-  margin-left: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
 overflow: hidden;
 }
 .container .card .imgbx img{

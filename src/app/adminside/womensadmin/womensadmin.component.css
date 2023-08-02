@@ -82,13 +82,12 @@ padding: 3px;
   margin: 50px;
   margin-left: 20px;
   display: grid;
-  grid-template-columns: repeat( auto-fit,minmax(270px,0fr));
+  grid-template-columns: repeat( auto-fit,minmax(250px,1fr));
   grid-gap: 40px;
   padding: 10px;
 
 }
 .container .card{
-  height: 80vh;
   cursor: pointer;
   border: 2px solid rgba(0, 0, 0, 0.122);
   border-radius: 5px;

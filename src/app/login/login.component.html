@@ -12,7 +12,7 @@
       <div class="error-container">
         <div *ngIf="LoginForm.controls['emailid'].invalid && (LoginForm.controls['emailid'].touched || LoginForm.controls['emailid'].dirty)" class="error">
           <div *ngIf="LoginForm.controls['emailid'].errors?.['required']" class="error"> Emailid is required </div>
-          <div *ngIf="LoginForm.controls['emailid'].errors?.['email']" class="error">Enter a correct emailid</div>
+          <div *ngIf="LoginForm.controls['emailid'].errors?.['pattern']" class="error">Enter a Proper email ID</div>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
       <div class="error-container">
         <div *ngIf="LoginForm.controls['password'].invalid && (LoginForm.controls['password'].touched || LoginForm.controls['password'].dirty)" class="error">
           <div *ngIf="LoginForm.controls['password'].errors?.['required']" class="error"> password is required </div>
-          <div *ngIf="LoginForm.controls['password'].errors?.['minlength']" class="error"> Your password is weak </div>
+          <div *ngIf="LoginForm.controls['password'].errors?.['pattern']" class="error"> Your password is too weak</div>
           <!-- <div *ngIf="LoginForm.controls['password'].errors?.['pattern']" class="error">password should contains one special,caps,small & numbers characters</div> -->
         </div>
       </div>

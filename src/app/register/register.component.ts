@@ -21,9 +21,9 @@ export class RegisterComponent implements OnInit {
   constructor(private  service:DbseviceService,private forms:FormBuilder ,private route:Router, private http:HttpClient) { }
 
   ResisterForm = this.forms.group({
-    username:[,[Validators.required,Validators.minLength(4)]],
-    emailid:[,[Validators.required, Validators.email]],
-    password:[,[Validators.required,Validators.minLength(8),Validators.maxLength(15),Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/)]],
+    username:[,[Validators.required,Validators.pattern(/^(?!.*([a-zA-Z0-9])\1{3})[a-zA-Z0-9!@#$%^&*-_]+$/)]],
+    emailid:[,[Validators.required, Validators.email,Validators.pattern(/^(?!.*([a-z])\1{3})[a-z0-9]+(\.[a-z0-9]+)*@([\w-]+\.)+(com|net|org|edu|gov|int|mil|biz|info|name|museum|coop|aero|[a-z]{2})$/)]],
+    password:[,[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]){8,32}.+$/)]],
     cpassword:[,[Validators.required]]},{validator:Confirmedvalidators('password','cpassword')})
   submitform(){
 

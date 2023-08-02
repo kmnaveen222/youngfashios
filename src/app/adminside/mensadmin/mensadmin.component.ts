@@ -45,7 +45,7 @@ ngOnInit(){
 submit(){
   if(this.addproduct.valid){
     this.http.post("http://localhost:3000/mens-product",this.addproduct.value).subscribe(data=>{
-          alert("Form submitted");
+          alert("Product add successfully");
           this.addproduct.reset();
           window.location.reload();
 

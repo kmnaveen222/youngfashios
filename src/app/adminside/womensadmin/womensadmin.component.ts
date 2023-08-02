@@ -44,7 +44,7 @@ submit(){
   console.log(this.addproduct.value);
   if(this.addproduct.valid){
     this.http.post(this.url+"/womens-product",this.addproduct.value).subscribe(data=>{
-          alert("Form submitted");
+          alert("Product add successfully");
           this.addproduct.reset();
           window.location.reload();
 

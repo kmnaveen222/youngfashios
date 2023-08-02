@@ -16,7 +16,7 @@
         <div class="error-container">
         <div *ngIf="ResisterForm.controls['username'].invalid && (ResisterForm.controls['username'].touched || ResisterForm.controls['username'].dirty)" class="error">
           <div *ngIf="ResisterForm.controls['username'].errors?.['required']" class="error"> First Name is required </div>
-          <div *ngIf="ResisterForm.controls['username'].errors?.['minlength']" class="error">First Name Minimum Length is 4</div>
+          <div *ngIf="ResisterForm.controls['username'].errors?.['pattern']" class="error">Don't use repeated characters</div>
         </div>
       </div>
 
@@ -27,7 +27,7 @@
         <div class="error-container">
           <div *ngIf="ResisterForm.controls['emailid'].invalid && (ResisterForm.controls['emailid'].touched || ResisterForm.controls['emailid'].dirty)" class="error">
             <div *ngIf="ResisterForm.controls['emailid'].errors?.['required']" class="error"> Emailid is required </div>
-            <div *ngIf="ResisterForm.controls['emailid'].errors?.['email']" class="error">Enter a correct emailid</div>
+            <div *ngIf="ResisterForm.controls['emailid'].errors?.['pattern']" class="error">Enter a Proper email ID</div>
           </div>
         </div>
 
@@ -39,8 +39,7 @@
         <div class="error-container">
           <div *ngIf="ResisterForm.controls['password'].invalid && (ResisterForm.controls['password'].touched || ResisterForm.controls['password'].dirty)" class="error">
             <div *ngIf="ResisterForm.controls['password'].errors?.['required']" class="error"> password is required </div>
-            <div *ngIf="ResisterForm.controls['password'].errors?.['minlength']" class="error"> Enter a password atleast 8 to 15 characters </div>
-            <div *ngIf="ResisterForm.controls['password'].errors?.['pattern']" class="error">password should contains one special,caps,small & numbers characters</div>
+            <div *ngIf="ResisterForm.controls['password'].errors?.['pattern']" class="error"> Your password is too weak</div>
           </div>
         </div>
 
