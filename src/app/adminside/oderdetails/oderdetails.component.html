@@ -1,7 +1,7 @@
 
 <div class="con" >
   <ng-container *ngFor="let item of orderdata" >
-    <mat-expansion-panel hideToggle style="margin: 10px 0 10px 0;">
+    <mat-expansion-panel hideToggle style="margin: 10px 0 10px 0; padding: 20px;" >
     <mat-expansion-panel-header style="width: 100%; height: 20vh;">
       <mat-panel-title>
         <div class="img"><img src="{{item.thumbnail}}" style="width: 90%;"></div>
@@ -13,7 +13,7 @@
         <div class="title"><span>Quantity : </span>{{item.quantity}}</div>
       </div>
       </mat-panel-title>
-      <mat-panel-description>
+      <mat-panel-description >
         {{item.description}}
       </mat-panel-description>
       <div class="status"><span>Order Status :</span><span class="status1">{{item.orderstatus}}</span></div>

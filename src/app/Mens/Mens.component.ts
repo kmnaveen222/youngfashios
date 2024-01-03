@@ -4,6 +4,8 @@ import { OfferpercentageService } from '../service/offerpercentge/offerpercentag
 import { CartserviceService } from '../service/cartservice.service';
 import { DbseviceService } from '../service/dbsevice.service';
 import { window } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 
 
 
@@ -16,7 +18,7 @@ import { window } from 'rxjs';
 
 
 export class MensComponent implements OnInit {
-  url:any = "http://localhost:3000";
+  url:any = environment.urllink;
 pro:any;
 banpro:any;
 countdowndate:any;

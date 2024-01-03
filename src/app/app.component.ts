@@ -40,6 +40,10 @@ this.getadmin();
         console.log("1",this.adminlogin);
         this.adminlogin=false;
         console.log("2",this.adminlogin);
+         this.router.navigate(['/homeadmin'])
+
+
+
       }
     })
   })

@@ -14,6 +14,7 @@ export class AuthguardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(!this.dbservice.isuserloggedin()){
         alert("You are not logged in to view the page");
+        // console.log("returl",route.url[1]);
         this.router.navigate(["login"],{queryParams:{retUrl:route.url}}); //localhost:4200/login?retUrl=product
         return false;
         }
